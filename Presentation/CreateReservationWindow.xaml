@@ -1,0 +1,64 @@
+﻿<Window x:Class="VacationParkApp.Presentation.CreateReservationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Create Reservation" 
+        Height="700" 
+        Width="650"
+        MinHeight="350"
+        MinWidth="650"
+        >
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Row 0: Search Customer -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <TextBlock Text="Search Customer (Name/ID):" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="TxtCustomerSearch" Width="150" Margin="0,0,5,0"/>
+            <Button x:Name="BtnSearchCustomer" Content="Search" Width="80" 
+                    Click="BtnSearchCustomer_Click"/>
+        </StackPanel>
+
+        <!-- Row 1: Select found customer -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <TextBlock Text="Select Customer:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <ComboBox x:Name="CmbCustomers" Width="250"/>
+        </StackPanel>
+
+        <!-- Row 2: Park & People count -->
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="0,0,0,10">
+            <TextBlock Text="Select Park:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <ComboBox x:Name="CmbParks" Width="200" Margin="0,0,20,0"/>
+            <TextBlock Text="People:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="TxtPeopleCount" Width="50"/>
+        </StackPanel>
+
+        <!-- Row 3: Date pickers + ShowHouses button -->
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="0,0,0,10">
+            <TextBlock Text="Start:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="DpStartDate" Width="130" Margin="0,0,20,0"/>
+            <TextBlock Text="End:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <DatePicker x:Name="DpEndDate" Width="130" Margin="0,0,20,0"/>
+            <Button x:Name="BtnShowHouses" Content="Show Houses" Width="120" Height="30"
+                    Click="BtnShowHouses_Click"/>
+        </StackPanel>
+
+        <!-- Row 4: List of houses -->
+        <ListBox x:Name="LstAvailableHouses" Grid.Row="4" Margin="0,0,0,10"/>
+
+        <!-- Row 5: Confirm Reservation -->
+        <Button x:Name="BtnConfirmReservation"
+                Grid.Row="5"
+                Content="Confirm Reservation"
+                Width="150"
+                Height="35"
+                HorizontalAlignment="Left"
+                Click="BtnConfirmReservation_Click"/>
+    </Grid>
+</Window>

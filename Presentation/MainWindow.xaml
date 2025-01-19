@@ -1,0 +1,24 @@
+﻿<Window x:Class="VacationParkApp.Presentation.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Main Menu" Height="300" Width="400">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Button x:Name="BtnCreateReservation"
+                Content="Create Reservation"
+                Width="150"
+                Height="35"
+                Margin="0,0,0,10"
+                Click="BtnCreateReservation_Click"/>
+        <Button x:Name="BtnSearchReservation"
+                Content="Search Reservation"
+                Width="150"
+                Height="35"
+                Margin="0,0,0,10"
+                Click="BtnSearchReservation_Click"/>
+        <Button x:Name="BtnMaintenance"
+                Content="Maintenance"
+                Width="150"
+                Height="35"
+                Click="BtnMaintenance_Click"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Window x:Class="VacationParkApp.Presentation.MaintenanceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="House Maintenance"
+        Height="500"
+        Width="650">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- row 0: ID, Street, Capacity -->
+            <RowDefinition Height="Auto"/>
+            <!-- row 1: button to set maintenance -->
+            <RowDefinition Height="*"/>
+            <!-- row 2: listbox (houses or reservations) -->
+            <RowDefinition Height="Auto"/>
+            <!-- row 3: status label -->
+        </Grid.RowDefinitions>
+
+        <!-- Row 0: Text fields + Search Button -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <!-- House ID -->
+            <TextBlock Text="House ID:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="TxtHouseId" Width="70" Margin="0,0,10,0"/>
+
+            <!-- Street substring -->
+            <TextBlock Text="Street:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="TxtStreetFilter" Width="130" Margin="0,0,10,0"/>
+
+            <!-- Min Capacity -->
+            <TextBlock Text="Min Capacity:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="TxtCapacityFilter" Width="50" Margin="0,0,10,0"/>
+
+            <!-- Search button -->
+            <Button x:Name="BtnSearchHouses"
+                    Content="Search Houses"
+                    Width="110"
+                    Click="BtnSearchHouses_Click"/>
+        </StackPanel>
+
+        <!-- Row 1: Set Maintenance Button -->
+        <Button x:Name="BtnSetMaintenance"
+                Grid.Row="1"
+                Content="Set House In Maintenance"
+                Width="180"
+                Height="30"
+                HorizontalAlignment="Left"
+                Click="BtnSetMaintenance_Click"/>
+
+        <!-- Row 2: List of houses or reservations -->
+        <ListBox x:Name="LstResults"
+                 Grid.Row="2"
+                 Margin="0,10,0,0"/>
+
+        <!-- Row 3: Status label -->
+        <TextBlock x:Name="LblStatus"
+                   Grid.Row="3"
+                   Margin="0,10,0,0"
+                   Foreground="Blue"/>
+    </Grid>
+</Window>
